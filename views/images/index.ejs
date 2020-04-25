@@ -1,0 +1,20 @@
+<%- include("../partials/header.ejs") %>
+
+
+<div class="container">
+	<div class="jumbotron">
+		<h1><i class="fas fa-camera-retro"></i>Modelages Image Gallery</h1>
+		<p>Our Latest!</p>
+		<%if(currentUser && currentUser.isAdmin){%><a href="/images/new" class="btn btn-lg btn-success">Add New Image</a><%}%>
+	</div>
+	<div class="row ">
+        <%images.forEach(function(image){%>
+        <div class="col-lg-4 col-md-6  col-sm-6 col-12" style="margin-bottom : 10px;">
+            <a href="/images/<%=image._id%>"><img src="<%=image.url%>" class="img-thumbnail"></a>
+        </div>
+        <%});%>
+    </div>
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

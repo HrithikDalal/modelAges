@@ -1,0 +1,27 @@
+<%- include("../partials/header.ejs") %>
+
+<div class ="ui main tetx container segment">
+    <div class="ui huge header">New Blog</div>
+    <form  class ="ui form" action="/images" method="POST">
+        <div class = "field">
+            <label>Title</laabel>
+             <input type="text" name ="image[name]"  placeholder="Enter title of Image">
+        </div>
+        <div class = "field">
+            <laabel>Image Url</laabel>
+             <input type="text" name="image[url]" placeholder="Image Url">
+        </div>
+        <div class = "field">
+            <label>Image description</label>
+             <textarea name="image[description]" required></textarea>
+        </div>
+        <input class ="ui blue basic button" type="submit">
+    </form>
+<a href="/">Go Back</a>
+</div>
+
+
+
+
+
+<%- include("../partials/footer.ejs") %>

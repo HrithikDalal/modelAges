@@ -1,0 +1,44 @@
+<%- include("../partials/header.ejs") %>
+
+    <h3 class="ui block header">
+  Testimonials   <a class="ui right floated green button" href="/testimonials/new">Add testimonial</a>
+</h3>
+<div class = "row text-center">
+
+    <%testimonials.forEach(function(testimonial){%>
+    <div class="col-lg-3 col-md-6  col-sm-6 col-12">
+        <div class="ui raised card" style="margin : 10px;">
+            <div class="content">
+                <div class="header"><%=testimonial.author%>
+                </div>
+                <div class="meta">
+                  <span class="category"><%=testimonial.created.toDateString()%></span>
+                </div>
+                <div class="description">
+                  <p><%=testimonial.body%></p>
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="right floated">
+                    <span class="fas fa-star"></span>
+                    <% if (testimonial.rating > 1.5) { %> <span class="fas fa-star"></span> <% }else{ %> <span class="far fa-star"></span> <% } %>
+                    <% if (testimonial.rating > 2.5) { %> <span class="fas fa-star"></span> <% }else{ %> <span class="far fa-star"></span> <% } %>
+                    <% if (testimonial.rating > 3.5) { %> <span class="fas fa-star"></span> <% }else{ %> <span class="far fa-star"></span> <% } %>
+                    <% if (testimonial.rating > 4.5) { %> <span class="fas fa-star"></span> <% }else{ %> <span class="far fa-star"></span> <% } %>
+                </div>
+                <br>
+                <div>
+                    <%if(currentUser && testimonial.author === currentUser.username){%>
+                    <a class ="ui orange basic button" href="/testimonials/<%=testimonial._id%>/edit">Edit</a>
+                    <form id="delete" action="/testimonials/<%=testimonial._id%>?_method=DELETE" method="POST">
+                        <button class="ui red basic button">Delete</button>
+                    </form>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <% }) %>
+</div>
+
+<%- include("../partials/footer.ejs") %>

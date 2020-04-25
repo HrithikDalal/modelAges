@@ -1,0 +1,85 @@
+
+    </div>
+    <footer class="site-footer">
+        <div class="row footer-row">
+            <div class =" col-md-4 col-lg-4 col-sm-12"> 
+                <h3 class="footer-title">About Modelages</h3>
+                <p>Our mission at Modelages Unisex Salon is to provide a friendly, personalized service through a team of highly skilled and creative professionals. Teamwork is our most valuable asset which ensures our clients are always number one, and we strive to exceed your expectations.</p>
+            </div>
+            <div class =" col-md-4 col-lg-4 col-sm-12">
+                <h4 class="footer-title">Contact Info</h4>
+                <div class="footer-block">
+                    <i class="fas fa-map-marker" aria-hidden="true"></i>
+                    <p>Shop No. G5 & F1, Plot No. 11, Manish Abhinav Plaza, Near Rajdhani Bazar,<br>
+                        Aashirwad Chowk, Sector 4 Shopping Complex<br>
+                        Dwarka<br>
+                        New Delhi, Delhi 110075 ,India</p>
+                </div>
+                <div class="footer-block">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <p>011 2808 5605</p>
+                </div>
+                <div class="footer-block">
+                    <i class="fas fa-envelope"></i></i>
+                    <p>modelages@fakeemail.com</p>
+                </div>
+            </div>
+            <div class =" col-md-4 col-lg-4 col-sm-12">
+                <div id="map"></div>
+            </div>            
+        </div>
+        
+        <div class ="footer-bottom">
+            <div class="footer-row row">
+                <div class="menu-social col-md-6">
+                    <a href="#"><i class="fab fa-youtube-square"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </div>
+                <div class="col-md-6">
+                    <p><emsp>Trademark Modelages 2020 <i class="fas fa-copyright"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    <!--Google Maps-->
+    <script>
+    function initMap() {
+    var lat = 28.597908;
+    var lng = 77.048717;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `<strong>Modelages Unisex Salon
+    <br><a href="https://goo.gl/maps/TZHXfh2zL5nyA1CG6">View On Google Map</a></strong>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAqlmP_xYs8ut-CuejhhbhjhO4cSXbZaI&callback=initMap"></script>
+    
+    
+    
+    
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+ </body>
+</html>

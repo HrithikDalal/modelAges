@@ -1,0 +1,35 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <h3 class="ui block header">
+  Services <%if(currentUser && currentUser.isAdmin){%><a class="ui right floated green button" href="/services/new">Add new Service</a><%}%>
+</h3>
+<div class = "row text-center">
+    <%services.forEach(function(service){%>
+    <div class="card col-lg-3 col-md-4 col-sm-6">
+        <img src="<%=service.image%>" class="img-thumbnail">
+        <div class="card-body">
+            </u><h5><%=service.name%></h5>
+            <hr>
+            <p><%=service.description%></p>
+            <a class="btn btn-primary" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/modelagessalon/<%=service.appointment%>'});return false;">Book Appointment</a>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Cost - ₹ <%=service.cost%></small>
+          <div>
+            <%if(currentUser && currentUser.isAdmin){%>
+            <a class ="ui orange basic button" href="/services/<%=service._id%>/edit">Edit</a>
+            <form id="delete" action="/services/<%=service._id%>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+            <%}%>
+          </div>
+        </div>
+    </div>
+    <%});%>
+
+
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

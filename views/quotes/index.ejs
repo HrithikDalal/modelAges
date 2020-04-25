@@ -1,0 +1,34 @@
+<%- include("../partials/header.ejs") %>
+
+
+
+
+<h3 class="ui block header">
+   Quotes
+</h3>
+
+<div class="container">
+    <div class = "row text-center">
+    <%quotes.forEach(function(quote){%>
+    <div class="ui top attached segment col-lg-3 col-md-5 col-sm-12 card" style ="padding : 10px; margin: 30px">
+        <div class="card-body">
+            <h5><%=quote.name%></h5>
+            <h6><%=quote.email%></h6>
+            <h6><%=quote.phone%></h6>
+            <p><%=quote.message%></p>
+            <div class="meta">
+                <span><%=quote.created.toDateString()%></span>
+            </div>
+        </div>
+        <%if(currentUser && currentUser.isAdmin){%>
+            <form id="delete" action="/quotes/<%=quote._id%>?_method=DELETE" method="POST">
+        <button class="ui red basic button">Delete</button>
+    </form>
+    <%}%>
+    </div>
+    <%});%>
+</div>    
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

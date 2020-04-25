@@ -1,0 +1,40 @@
+<%- include("../partials/header.ejs") %>
+
+
+
+<div class="ui text">
+<h3 class="ui block header">
+  The Beauty Island  <%if(currentUser && currentUser.isAdmin){%><a class="ui right floated green button" href="/blogs/new">Write new Blog</a><%}%>
+</h3>
+    <div class="ui top attached segment" style="margin : 10px;">
+        <div class="ui divided items">
+            <%blogs.forEach(function(blog){%>
+            <div class="item" >
+                <div class="image">
+                     <img src="<%=blog.image%>">
+                </div>
+                <div class="content">
+                    <a class="header" href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+                    <div class="meta">
+                        <span><%=blog.created.toDateString()%></span>
+                    </div>
+                    <div class="description"> 
+                    <p><%=blog.body.substring(0,500)%>...</p>
+                    </div>
+                    <div class="extra">
+                        <a class="ui violet button" href="/blogs/<%=blog._id%>">
+                        Read More
+                        <i class="right chevron icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <%});%>
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include("../partials/footer.ejs") %>

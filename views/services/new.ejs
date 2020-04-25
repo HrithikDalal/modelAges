@@ -1,0 +1,39 @@
+<%- include("../partials/header.ejs") %>
+
+<div style="margin-top:30px;"><h1 style="text-align :center;color : #FFFFFF;">Add New Service</h1>
+</div>
+<div style= "width : 30%; margin: 20px auto;">
+
+
+<div class ="ui main container segment">
+  <form action="/services" method= "POST">
+  <div class="form-group" >
+    <label for="name">Name</label>
+    <input type="text" class="form-control"  name ="service[name]"  placeholder="Enter name of Service">
+  </div>
+  <div class="form-group" >
+    <label for="cost">Cost</label>
+    <input type="number" class="form-control"  name ="service[cost]"  placeholder="Cost/Session" min="10" step="10">
+  </div>  
+  <div class="form-group">
+    <label for="image">Image Url</label>
+    <input type="text" class="form-control"  name="service[image]" placeholder="Image Url">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control"  name="service[description]" placeholder="Description">
+    </textarea>
+  </div>  
+  <div class="form-group">
+    <label for="appointment">Appointment Link</label>
+    <textarea class="form-control"  name="service[appointment]" placeholder="Appointment">
+    </textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+</div>    
+
+<a href="/">Go Back</a>
+</div>
+
+<%- include("../partials/footer.ejs") %>
