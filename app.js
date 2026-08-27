@@ -68,6 +68,6 @@ app.use("/quotes",quotetRoutes);
 app.use("/testimonials",testimonialRoutes);
 
 
-app.listen(process.env.PORT, process.env.IP,function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("Salon server has Started!");
 });
